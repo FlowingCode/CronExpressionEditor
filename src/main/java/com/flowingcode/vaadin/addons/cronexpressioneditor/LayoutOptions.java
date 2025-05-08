@@ -1,8 +1,8 @@
 /*-
  * #%L
- * Template Add-on
+ * Cron Expression Editor Add-on
  * %%
- * Copyright (C) 2024 Flowing Code
+ * Copyright (C) 2025 Flowing Code
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,20 +17,9 @@
  * limitations under the License.
  * #L%
  */
+package com.flowingcode.vaadin.addons.cronexpressioneditor;
 
-package com.flowingcode.vaadin.addons.template;
-
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.router.BeforeEnterEvent;
-import com.vaadin.flow.router.BeforeEnterObserver;
-import com.vaadin.flow.router.Route;
-
-@SuppressWarnings("serial")
-@Route("")
-public class DemoView extends VerticalLayout implements BeforeEnterObserver {
-
-  @Override
-  public void beforeEnter(BeforeEnterEvent event) {
-    event.forwardTo(TemplateDemoView.class);
-  }
+/** Defines the display modes available for the {@link CronExpressionEditor}. */
+public enum LayoutOptions {
+  DAILY, MONTHLY, ADVANCED;
 }
