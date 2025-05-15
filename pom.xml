@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.flowingcode.vaadin.addons</groupId>
-    <artifactId>template-addon</artifactId>
+    <artifactId>cron-expression-editor-addon</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>Template Add-on</name>
-    <description>Template Add-on for Vaadin Flow</description>
+    <name>Cron Expression Editor Add-on</name>
+    <description>Component that assists in the generation of cron expressions</description>
     <url>https://www.flowingcode.com/en/open-source/</url>
 
     <properties>
@@ -20,8 +20,10 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <drivers.dir>${project.basedir}/drivers</drivers.dir>
         <jetty.version>11.0.20</jetty.version>
+        <cron.expression.descriptor.version>1.2.10</cron.expression.descriptor.version>
+        <day.of.week.selector.version>1.0.0</day.of.week.selector.version>
+        <spring.context.version>6.2.5</spring.context.version>
         <flowingcode.commons.demo.version>4.2.0</flowingcode.commons.demo.version>
-        <frontend.hotdeploy>true</frontend.hotdeploy>
     </properties>
 
     <organization>
@@ -117,6 +119,21 @@
     </pluginRepositories>
 
     <dependencies>
+    	<dependency>
+			<groupId>com.flowingcode.vaadin.addons</groupId>
+			<artifactId>day-of-week-selector-addon</artifactId>
+			<version>${day.of.week.selector.version}</version>
+		</dependency>
+		<dependency>
+  		  <groupId>org.springframework</groupId>
+  		  <artifactId>spring-context</artifactId>
+		  <version>${spring.context.version}</version>
+		</dependency>
+		<dependency>
+		  <groupId>it.burning</groupId>
+		  <artifactId>cron-expression-descriptor</artifactId>
+		  <version>${cron.expression.descriptor.version}</version>
+		</dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-core</artifactId>
@@ -264,15 +281,12 @@
                     <scan>3</scan>
                     <!-- Use test scope because the UI/demo classes are in the test package. -->
                     <useTestScope>true</useTestScope>
-                    <webApp>
-                        <resourceBases>
-                            <resourceBase>src/test/resources/META-INF/resources</resourceBase>
-                            <resourceBase>src/main/resources/META-INF/resources</resourceBase>
-                        </resourceBases>
-                    </webApp>
                     <supportedPackagings>
                         <supportedPackaging>jar</supportedPackaging>
                     </supportedPackagings>
+                     <systemProperties>
+                        <vaadin.frontend.hotdeploy>true</vaadin.frontend.hotdeploy>
+                    </systemProperties>			
                 </configuration>
             </plugin>
         </plugins>

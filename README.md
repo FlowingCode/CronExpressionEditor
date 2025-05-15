@@ -1,24 +1,27 @@
-[![Published on Vaadin Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/template-add-on)
-[![Stars on vaadin.com/directory](https://img.shields.io/vaadin-directory/star/template-add-on.svg)](https://vaadin.com/directory/component/template-add-on)
-[![Build Status](https://jenkins.flowingcode.com/job/template-addon/badge/icon)](https://jenkins.flowingcode.com/job/template-addon)
-[![Maven Central](https://img.shields.io/maven-central/v/com.flowingcode.vaadin.addons/template-addon)](https://mvnrepository.com/artifact/com.flowingcode.vaadin.addons/template-addon)
-[![Javadoc](https://img.shields.io/badge/javadoc-00b4f0)](https://javadoc.flowingcode.com/artifact/com.flowingcode.vaadin.addons/template-addon)
+[![Published on Vaadin Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/cron-expression-editor-add-on)
+[![Stars on vaadin.com/directory](https://img.shields.io/vaadin-directory/star/cron-expression-editor-add-on.svg)](https://vaadin.com/directory/component/cron-expression-editor-add-on)
+[![Build Status](https://jenkins.flowingcode.com/job/CronExpressionEditor-addon/badge/icon)](https://jenkins.flowingcode.com/job/CronExpressionEditor-addon)
+[![Maven Central](https://img.shields.io/maven-central/v/com.flowingcode.vaadin.addons/cron-expression-editor-addon)](https://mvnrepository.com/artifact/com.flowingcode.vaadin.addons/cron-expression-editor-addon)
+[![Javadoc](https://img.shields.io/badge/javadoc-00b4f0)](https://javadoc.flowingcode.com/artifact/com.flowingcode.vaadin.addons/cron-expression-editor-addon)
 
-# Template Add-on
+# Cron Expression Editor
 
-This is a template project for building new Vaadin 24 add-ons
+A component for Vaadin 24 that assists in the generation of cron expressions
 
 ## Features
 
-* List the features of your add-on in here
+* A mode to input daily, weekly and monthly expressions with the assistance of UI components
+* An advanced mode to input cron expressions directly
+* Calculation of the next dates scheduled by the generated cron expression
+* Allows the configuration of a list of frequently used cron expressions
 
 ## Online demo
 
-[Online demo here](http://addonsv24.flowingcode.com/template)
+[Online demo here](http://addonsv24.flowingcode.com/cron-expression-editor)
 
 ## Download release
 
-[Available in Vaadin Directory](https://vaadin.com/directory/component/template-add-on)
+[Available in Vaadin Directory](https://vaadin.com/directory/component/cron-expression-editor-add-on)
 
 ### Maven install
 
@@ -27,7 +30,7 @@ Add the following dependencies in your pom.xml file:
 ```xml
 <dependency>
    <groupId>com.flowingcode.vaadin.addons</groupId>
-   <artifactId>template-addon</artifactId>
+   <artifactId>cron-expression-editor-addon</artifactId>
    <version>X.Y.Z</version>
 </dependency>
 ```
@@ -44,7 +47,7 @@ To see the demo, navigate to http://localhost:8080/
 
 ## Release notes
 
-See [here](https://github.com/FlowingCode/TemplateAddon/releases)
+See [here](https://github.com/FlowingCode/CronExpressionEditor/releases)
 
 ## Issue tracking
 
@@ -69,13 +72,28 @@ Then, follow these steps for creating a contribution:
 
 This add-on is distributed under Apache License 2.0. For license terms, see LICENSE.txt.
 
-TEMPLATE_ADDON is written by Flowing Code S.A.
+CronExpressionEditor is written by Flowing Code S.A.
+
+## Third-Party Dependencies
+
+This project includes the following third-party dependency:  
+
+- **cron-expression-descriptor** – Licensed under the [MIT License](https://opensource.org/licenses/MIT).  
 
 # Developer Guide
 
 ## Getting started
 
-Add your code samples in this section
+```java
+// Create a new instance
+CronExpressionEditor editor = new CronExpressionEditor();
+
+// Set default expression (optional)
+editor.setDefaultExpression("0 0 12 * * ?");
+
+// Add to your layout
+add(editor);
+```
 
 ## Special configuration when using Spring
 
