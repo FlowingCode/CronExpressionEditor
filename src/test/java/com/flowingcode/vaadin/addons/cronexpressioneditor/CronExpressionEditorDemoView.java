@@ -17,15 +17,25 @@
  * limitations under the License.
  * #L%
  */
-package com.flowingcode.vaadin.addons;
+package com.flowingcode.vaadin.addons.cronexpressioneditor;
 
-import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.router.RouterLayout;
+import com.flowingcode.vaadin.addons.DemoLayout;
+import com.flowingcode.vaadin.addons.GithubLink;
+import com.flowingcode.vaadin.addons.demo.TabbedDemo;
+import com.vaadin.flow.router.ParentLayout;
+import com.vaadin.flow.router.Route;
 
 @SuppressWarnings("serial")
-public class DemoLayout extends Div implements RouterLayout {
+@ParentLayout(DemoLayout.class)
+@Route("cron-exp-editor")
+@GithubLink("https://github.com/FlowingCode/CronExpressionEditor")
+public class CronExpressionEditorDemoView extends TabbedDemo {
 
-  public DemoLayout() {
+  public CronExpressionEditorDemoView() {
+    addDemo(CronExpressionEditorDemo.class);
+    addDemo(NextDatesVisibleDemo.class);
+    addDemo(CommonExpressionDemo.class);
+    addDemo(HelpEnabledDemo.class);
     setSizeFull();
   }
 }
