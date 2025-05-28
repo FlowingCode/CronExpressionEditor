@@ -4,7 +4,7 @@
 [![Maven Central](https://img.shields.io/maven-central/v/com.flowingcode.vaadin.addons/cron-expression-editor-addon)](https://mvnrepository.com/artifact/com.flowingcode.vaadin.addons/cron-expression-editor-addon)
 [![Javadoc](https://img.shields.io/badge/javadoc-00b4f0)](https://javadoc.flowingcode.com/artifact/com.flowingcode.vaadin.addons/cron-expression-editor-addon)
 
-# Cron Expression Editor
+# Cron Expression Editor Add-on
 
 A component for Vaadin 24 that assists in the generation of cron expressions
 
@@ -72,7 +72,7 @@ Then, follow these steps for creating a contribution:
 
 This add-on is distributed under Apache License 2.0. For license terms, see LICENSE.txt.
 
-CronExpressionEditor is written by Flowing Code S.A.
+CronExpressionEditor Add-on is written by Flowing Code S.A.
 
 ## Third-Party Dependencies
 
