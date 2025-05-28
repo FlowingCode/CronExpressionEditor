@@ -109,7 +109,7 @@ public class CronExpressionEditor extends CustomField<String> {
   /**
    * Creates a new instance of {@code CronExpressionEditor} with a default expression.
    * 
-   * @param defaultExpression a {@code String} representing the default cron expression to be set.
+   * @param defaultExpression a {@code String} representing the default cron expression to be set
    */
   public CronExpressionEditor(String defaultExpression) {
     this();
@@ -558,7 +558,7 @@ public class CronExpressionEditor extends CustomField<String> {
   }
 
   /**
-   * Sets the {@link Locale} for this component
+   * Sets the {@link Locale} for this component.
    *
    * @param locale the {@link Locale} to be used
    */
@@ -569,7 +569,7 @@ public class CronExpressionEditor extends CustomField<String> {
   /**
    * Sets the internationalization settings for the editor.
    * <p>
-   * If {@code i18n} is {@code null}, default internationalization to english
+   * If {@code i18n} is {@code null}, default internationalization to english.
    * </p>
    *
    * @param i18n the {@link CronExpressionEditorI18n} to use, or {@code null} for default
