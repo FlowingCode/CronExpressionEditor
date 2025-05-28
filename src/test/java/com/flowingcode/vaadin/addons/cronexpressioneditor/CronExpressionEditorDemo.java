@@ -37,7 +37,6 @@ import com.vaadin.flow.router.Route;
 public class CronExpressionEditorDemo extends VerticalLayout {
 
   public CronExpressionEditorDemo() {
-
     TextField defaultCronTf = new TextField();
     defaultCronTf.setPlaceholder("Input a default cron expression");
     Button save = new Button("Save");
@@ -55,7 +54,6 @@ public class CronExpressionEditorDemo extends VerticalLayout {
     });
     Span valueDisplay = new Span();
     croneditor.addValueChangeListener(v -> valueDisplay.setText("Current expression: " + v.getValue()));
-    croneditor.setLocale(Locale.ENGLISH);
     add(new HorizontalLayout(defaultCronTf, save), croneditor, valueDisplay);
   }
 
