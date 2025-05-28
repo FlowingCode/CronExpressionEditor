@@ -286,6 +286,10 @@
                     </supportedPackagings>
                      <systemProperties>
                         <vaadin.frontend.hotdeploy>true</vaadin.frontend.hotdeploy>
+                        <systemProperty>
+                			<key>vaadin.i18n.provider</key>
+                			<value>com.flowingcode.vaadin.addons.cronexpressioneditor.TranslationProvider</value>
+                		</systemProperty>
                     </systemProperties>			
                 </configuration>
             </plugin>
