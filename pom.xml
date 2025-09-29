@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.flowingcode.vaadin.addons</groupId>
-    <artifactId>cron-expression-editor-addon</artifactId>
+    <artifactId>cron-expression-field-addon</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>Cron Expression Editor Add-on</name>
+    <name>Cron Expression Field Add-on</name>
     <description>Component that assists in the generation of cron expressions</description>
     <url>https://www.flowingcode.com/en/open-source/</url>
 
@@ -41,9 +41,9 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/FlowingCode/AddonStarter24</url>
-        <connection>scm:git:git://github.com/FlowingCode/AddonStarter24.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com:/FlowingCode/AddonStarter24.git</developerConnection>
+        <url>https://github.com/FlowingCode/CronExpressionField</url>
+        <connection>scm:git:git://github.com/FlowingCode/CronExpressionField.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:/FlowingCode/CronExpressionField.git</developerConnection>
         <tag>master</tag>
     </scm>
 
@@ -288,7 +288,7 @@
                         <vaadin.frontend.hotdeploy>true</vaadin.frontend.hotdeploy>
                         <systemProperty>
                 			<key>vaadin.i18n.provider</key>
-                			<value>com.flowingcode.vaadin.addons.cronexpressioneditor.TranslationProvider</value>
+                			<value>com.flowingcode.vaadin.addons.cronexpressionfield.TranslationProvider</value>
                 		</systemProperty>
                     </systemProperties>			
                 </configuration>

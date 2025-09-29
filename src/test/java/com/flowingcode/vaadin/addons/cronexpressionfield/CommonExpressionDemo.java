@@ -1,6 +1,6 @@
 /*-
  * #%L
- * Cron Expression Editor Add-on
+ * Cron Expression Field Add-on
  * %%
  * Copyright (C) 2025 Flowing Code
  * %%
@@ -17,7 +17,7 @@
  * limitations under the License.
  * #L%
  */
-package com.flowingcode.vaadin.addons.cronexpressioneditor;
+package com.flowingcode.vaadin.addons.cronexpressionfield;
 
 import com.flowingcode.vaadin.addons.demo.DemoSource;
 import com.vaadin.flow.component.button.Button;
@@ -32,25 +32,25 @@ import com.vaadin.flow.router.Route;
 @DemoSource
 @PageTitle("Set common expressions Demo")
 @SuppressWarnings("serial")
-@Route(value = "cron-exp-editor/common-exp", layout = CronExpressionEditorDemoView.class)
+@Route(value = "cron-expression-field/common-exp", layout = CronExpressionFieldDemoView.class)
 public class CommonExpressionDemo extends VerticalLayout {
 
   public CommonExpressionDemo() {
-    CronExpressionEditor croneditor = new CronExpressionEditor();
-    croneditor.addCommonExpressions("0 0 2 4 1/2 ?", "0 0 2 ? * 1,2,3");
+    CronExpressionField croneField = new CronExpressionField();
+    croneField.addCommonExpressions("0 0 2 4 1/2 ?", "0 0 2 ? * 1,2,3");
     TextField expressionToAdd = new TextField("Add a new common cron");
     Button save = new Button("Save");
     save.addClickListener(e -> {
-      if (croneditor.addCommonExpressions(expressionToAdd.getValue())) {
+      if (croneField.addCommonExpressions(expressionToAdd.getValue())) {
         Notification.show("Successfully added");
       } else {
         Notification.show("Invalid cron expression");
       }
 
     });
-    croneditor.setCommonExpressionsVisible(true);
+    croneField.setCommonExpressionsVisible(true);
     Span valueDisplay = new Span();
-    croneditor.addValueChangeListener(v -> valueDisplay.setText("Current expression: " + v.getValue()));
-    add(new Div(expressionToAdd, save), croneditor, valueDisplay);
+    croneField.addValueChangeListener(v -> valueDisplay.setText("Current expression: " + v.getValue()));
+    add(new Div(expressionToAdd, save), croneField, valueDisplay);
   }
 }

@@ -1,6 +1,6 @@
 /*-
  * #%L
- * Cron Expression Editor Add-on
+ * Cron Expression Field Add-on
  * %%
  * Copyright (C) 2025 Flowing Code
  * %%
@@ -17,21 +17,9 @@
  * limitations under the License.
  * #L%
  */
-.inline-combobox{
-	background-color: transparent;
-	margin: 0;
-	padding: 0;
-}
-.inline-combobox::part(input-field) {
-    background-color: transparent;
-	padding: 0;
-	margin: 0;
-}
-vaadin-grid::part(header) {
-    display: none;
-}
-.description-div{
-	padding: 0;
-	margin: 0;
-	text-align: center;
+package com.flowingcode.vaadin.addons.cronexpressionfield;
+
+/** Defines the display modes available for the {@link CronExpressionField}. */
+public enum LayoutOptions {
+  DAILY, MONTHLY, ADVANCED;
 }

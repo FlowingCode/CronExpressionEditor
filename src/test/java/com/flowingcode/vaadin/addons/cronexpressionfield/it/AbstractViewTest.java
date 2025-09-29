@@ -1,6 +1,6 @@
 /*-
  * #%L
- * Cron Expression Editor Add-on
+ * Cron Expression Field Add-on
  * %%
  * Copyright (C) 2025 Flowing Code
  * %%
@@ -18,7 +18,7 @@
  * #L%
  */
 
-package com.flowingcode.vaadin.addons.cronexpressioneditor.it;
+package com.flowingcode.vaadin.addons.cronexpressionfield.it;
 
 import com.vaadin.testbench.ScreenshotOnFailureRule;
 import com.vaadin.testbench.TestBench;

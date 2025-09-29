@@ -1,6 +1,6 @@
 /*-
  * #%L
- * Cron Expression Editor Add-on
+ * Cron Expression Field Add-on
  * %%
  * Copyright (C) 2025 Flowing Code
  * %%
@@ -17,25 +17,20 @@
  * limitations under the License.
  * #L%
  */
-package com.flowingcode.vaadin.addons.cronexpressioneditor;
 
-import com.flowingcode.vaadin.addons.DemoLayout;
-import com.flowingcode.vaadin.addons.GithubLink;
-import com.flowingcode.vaadin.addons.demo.TabbedDemo;
-import com.vaadin.flow.router.ParentLayout;
+package com.flowingcode.vaadin.addons.cronexpressionfield;
+
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.router.BeforeEnterEvent;
+import com.vaadin.flow.router.BeforeEnterObserver;
 import com.vaadin.flow.router.Route;
 
 @SuppressWarnings("serial")
-@ParentLayout(DemoLayout.class)
-@Route("cron-exp-editor")
-@GithubLink("https://github.com/FlowingCode/CronExpressionEditor")
-public class CronExpressionEditorDemoView extends TabbedDemo {
+@Route("")
+public class DemoView extends VerticalLayout implements BeforeEnterObserver {
 
-  public CronExpressionEditorDemoView() {
-    addDemo(CronExpressionEditorDemo.class);
-    addDemo(NextDatesVisibleDemo.class);
-    addDemo(CommonExpressionDemo.class);
-    addDemo(HelpEnabledDemo.class);
-    setSizeFull();
+  @Override
+  public void beforeEnter(BeforeEnterEvent event) {
+    event.forwardTo(CronExpressionFieldDemoView.class);
   }
 }

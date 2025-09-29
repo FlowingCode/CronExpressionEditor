@@ -1,6 +1,6 @@
 /*-
  * #%L
- * Cron Expression Editor Add-on
+ * Cron Expression Field Add-on
  * %%
  * Copyright (C) 2025 Flowing Code
  * %%
@@ -18,26 +18,24 @@
  * #L%
  */
 
-package com.flowingcode.vaadin.addons.cronexpressioneditor;
+package com.flowingcode.vaadin.addons.cronexpressionfield;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
  * Internationalization object for customizing the component UI texts. An instance with the default messages can be
- * obtained using {@link CronExpressionEditorI18n#createDefault()}.
+ * obtained using {@link CronExpressionFieldI18n#createDefault()}.
  *
  * @author Sofia Nuñez / Flowing Code
  */
-public class CronExpressionEditorI18n implements Serializable {
+public class CronExpressionFieldI18n implements Serializable {
   private Map<LayoutOptions, String> layoutOptions;
   private String cronExpressionLabel;
   private String clearBtn;
   private String startsAtLabel;
-  private Map<CronExpressionEditor.Units, String> units;
+  private Map<CronExpressionField.Units, String> units;
   private String descriptionLabel;
   private String descriptionPlaceholder;
   private String dayOfMonthLabel;
@@ -55,14 +53,14 @@ public class CronExpressionEditorI18n implements Serializable {
   private String inputExpressionTooltip;
 
   /** Constructor for creating the default instance of the object. */
-  private CronExpressionEditorI18n() {
+  private CronExpressionFieldI18n() {
     this.layoutOptions =
         Map.of(LayoutOptions.DAILY, "Daily", LayoutOptions.MONTHLY, "Monthly", LayoutOptions.ADVANCED, "Advanced");
     this.cronExpressionLabel = "Cron expression";
     this.clearBtn = "Clear";
     this.startsAtLabel = "Starts at";
-    this.units = Map.of(CronExpressionEditor.Units.SECONDS, "Seconds", CronExpressionEditor.Units.MINUTES, "Minutes",
-        CronExpressionEditor.Units.HOURS, "Hours");
+    this.units = Map.of(CronExpressionField.Units.SECONDS, "Seconds", CronExpressionField.Units.MINUTES, "Minutes",
+        CronExpressionField.Units.HOURS, "Hours");
     this.descriptionLabel = "Description";
     this.descriptionPlaceholder = "Expression invalid or empty";
     this.dayOfMonthLabel = "Day of month";
@@ -80,12 +78,12 @@ public class CronExpressionEditorI18n implements Serializable {
   }
 
   /**
-   * Creates a new instance of {@code CronExpressionEditorI18n} with default values.
+   * Creates a new instance of {@code CronExpressionFieldI18n} with default values.
    *
-   * @return a new {@code CronExpressionEditorI18n} instance
+   * @return a new {@code CronExpressionFieldI18n} instance
    */
-  public static CronExpressionEditorI18n createDefault() {
-    return new CronExpressionEditorI18n();
+  public static CronExpressionFieldI18n createDefault() {
+    return new CronExpressionFieldI18n();
   }
 
   /**
@@ -103,7 +101,7 @@ public class CronExpressionEditorI18n implements Serializable {
    * @param cronExpressionLabel the label to set
    * @return this instance for method chaining
    */
-  public CronExpressionEditorI18n setCronExpressionLabel(String cronExpressionLabel) {
+  public CronExpressionFieldI18n setCronExpressionLabel(String cronExpressionLabel) {
     this.cronExpressionLabel = cronExpressionLabel;
     return this;
   }
@@ -123,7 +121,7 @@ public class CronExpressionEditorI18n implements Serializable {
    * @param clearBtn the label to set
    * @return this instance for method chaining
    */
-  public CronExpressionEditorI18n setClearBtn(String clearBtn) {
+  public CronExpressionFieldI18n setClearBtn(String clearBtn) {
     this.clearBtn = clearBtn;
     return this;
   }
@@ -142,7 +140,7 @@ public class CronExpressionEditorI18n implements Serializable {
    *
    * @param layoutOptions a map of layout options and labels
    */
-  public CronExpressionEditorI18n setLayoutOptions(Map<LayoutOptions, String> layoutOptions) {
+  public CronExpressionFieldI18n setLayoutOptions(Map<LayoutOptions, String> layoutOptions) {
     this.layoutOptions = new HashMap<>(layoutOptions);
     return this;
   }
@@ -161,7 +159,7 @@ public class CronExpressionEditorI18n implements Serializable {
    *
    * @param startsAtLabel the label to set
    */
-  public CronExpressionEditorI18n setStartsAtLabel(String startsAtLabel) {
+  public CronExpressionFieldI18n setStartsAtLabel(String startsAtLabel) {
     this.startsAtLabel = startsAtLabel;
     return this;
   }
@@ -172,7 +170,7 @@ public class CronExpressionEditorI18n implements Serializable {
    * @param timePickerLabel the label to set
    * @return this instance for method chaining
    */
-  public CronExpressionEditorI18n setTimePickerLabel(String timePickerLabel) {
+  public CronExpressionFieldI18n setTimePickerLabel(String timePickerLabel) {
     this.startsAtLabel = timePickerLabel;
     return this;
   }
@@ -182,7 +180,7 @@ public class CronExpressionEditorI18n implements Serializable {
    *
    * @return the list of unit labels
    */
-  public Map<CronExpressionEditor.Units, String> getUnits() {
+  public Map<CronExpressionField.Units, String> getUnits() {
     return new HashMap<>(units);
   }
 
@@ -192,7 +190,7 @@ public class CronExpressionEditorI18n implements Serializable {
    * @param units the list of units
    * @return this instance for method chaining
    */
-  public CronExpressionEditorI18n setUnits(Map<CronExpressionEditor.Units, String> units) {
+  public CronExpressionFieldI18n setUnits(Map<CronExpressionField.Units, String> units) {
     this.units = units;
     return this;
   }
@@ -212,7 +210,7 @@ public class CronExpressionEditorI18n implements Serializable {
    * @param descriptionLabel the label to set
    * @return this instance for method chaining
    */
-  public CronExpressionEditorI18n setDescriptionLabel(String descriptionLabel) {
+  public CronExpressionFieldI18n setDescriptionLabel(String descriptionLabel) {
     this.descriptionLabel = descriptionLabel;
     return this;
   }
@@ -232,7 +230,7 @@ public class CronExpressionEditorI18n implements Serializable {
    * @param descriptionPlaceholder the placeholder to set
    * @return this instance for method chaining
    */
-  public CronExpressionEditorI18n setDescriptionPlaceholder(String descriptionPlaceholder) {
+  public CronExpressionFieldI18n setDescriptionPlaceholder(String descriptionPlaceholder) {
     this.descriptionPlaceholder = descriptionPlaceholder;
     return this;
   }
@@ -252,7 +250,7 @@ public class CronExpressionEditorI18n implements Serializable {
    * @param dayOfMonthLabel the label to set
    * @return this instance for method chaining
    */
-  public CronExpressionEditorI18n setDayOfMonthLabel(String dayOfMonthLabel) {
+  public CronExpressionFieldI18n setDayOfMonthLabel(String dayOfMonthLabel) {
     this.dayOfMonthLabel = dayOfMonthLabel;
     return this;
   }
@@ -272,7 +270,7 @@ public class CronExpressionEditorI18n implements Serializable {
    * @param repeatEveryLabel the label to set
    * @return this instance for method chaining
    */
-  public CronExpressionEditorI18n setRepeatEveryLabel(String repeatEveryLabel) {
+  public CronExpressionFieldI18n setRepeatEveryLabel(String repeatEveryLabel) {
     this.repeatEveryLabel = repeatEveryLabel;
     return this;
   }
@@ -292,7 +290,7 @@ public class CronExpressionEditorI18n implements Serializable {
    * @param month the label to set
    * @return this instance for method chaining
    */
-  public CronExpressionEditorI18n setMonth(String month) {
+  public CronExpressionFieldI18n setMonth(String month) {
     this.month = month;
     return this;
   }
@@ -312,7 +310,7 @@ public class CronExpressionEditorI18n implements Serializable {
    * @param showNextDatesBtn the label to set
    * @return this instance for method chaining
    */
-  public CronExpressionEditorI18n setShowNextDatesBtn(String showNextDatesBtn) {
+  public CronExpressionFieldI18n setShowNextDatesBtn(String showNextDatesBtn) {
     this.showNextDatesBtn = showNextDatesBtn;
     return this;
   }
@@ -332,7 +330,7 @@ public class CronExpressionEditorI18n implements Serializable {
    * @param commonExpressionsLabel the label to set
    * @return this instance for method chaining
    */
-  public CronExpressionEditorI18n setCommonExpressionsLabel(String commonExpressionsLabel) {
+  public CronExpressionFieldI18n setCommonExpressionsLabel(String commonExpressionsLabel) {
     this.commonExpressionsLabel = commonExpressionsLabel;
     return this;
   }
@@ -352,7 +350,7 @@ public class CronExpressionEditorI18n implements Serializable {
    * @param timeAmountTooltip the tooltip text
    * @return this instance for method chaining
    */
-  public CronExpressionEditorI18n setTimeAmountTooltip(String timeAmountTooltip) {
+  public CronExpressionFieldI18n setTimeAmountTooltip(String timeAmountTooltip) {
     this.timeAmountTooltip = timeAmountTooltip;
     return this;
   }
@@ -372,7 +370,7 @@ public class CronExpressionEditorI18n implements Serializable {
    * @param daySelectorTooltip the tooltip text
    * @return this instance for method chaining
    */
-  public CronExpressionEditorI18n setDaySelectorTooltip(String daySelectorTooltip) {
+  public CronExpressionFieldI18n setDaySelectorTooltip(String daySelectorTooltip) {
     this.daySelectorTooltip = daySelectorTooltip;
     return this;
   }
@@ -392,7 +390,7 @@ public class CronExpressionEditorI18n implements Serializable {
    * @param startsAtTooltip the tooltip text
    * @return this instance for method chaining
    */
-  public CronExpressionEditorI18n setStartsAtTooltip(String startsAtTooltip) {
+  public CronExpressionFieldI18n setStartsAtTooltip(String startsAtTooltip) {
     this.startsAtTooltip = startsAtTooltip;
     return this;
   }
@@ -412,7 +410,7 @@ public class CronExpressionEditorI18n implements Serializable {
    * @param dayOfMonthTooltip the tooltip text
    * @return this instance for method chaining
    */
-  public CronExpressionEditorI18n setDayOfMonthTooltip(String dayOfMonthTooltip) {
+  public CronExpressionFieldI18n setDayOfMonthTooltip(String dayOfMonthTooltip) {
     this.dayOfMonthTooltip = dayOfMonthTooltip;
     return this;
   }
@@ -432,7 +430,7 @@ public class CronExpressionEditorI18n implements Serializable {
    * @param monthFieldTooltip the tooltip text
    * @return this instance for method chaining
    */
-  public CronExpressionEditorI18n setMonthFieldTooltip(String monthFieldTooltip) {
+  public CronExpressionFieldI18n setMonthFieldTooltip(String monthFieldTooltip) {
     this.monthFieldTooltip = monthFieldTooltip;
     return this;
   }
@@ -452,7 +450,7 @@ public class CronExpressionEditorI18n implements Serializable {
    * @param inputExpressionTooltip the tooltip text
    * @return this instance for method chaining
    */
-  public CronExpressionEditorI18n setInputExpressionTooltip(String inputExpressionTooltip) {
+  public CronExpressionFieldI18n setInputExpressionTooltip(String inputExpressionTooltip) {
     this.inputExpressionTooltip = inputExpressionTooltip;
     return this;
   }

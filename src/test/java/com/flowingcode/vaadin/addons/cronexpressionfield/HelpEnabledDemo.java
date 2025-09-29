@@ -1,6 +1,6 @@
 /*-
  * #%L
- * Cron Expression Editor Add-on
+ * Cron Expression Field Add-on
  * %%
  * Copyright (C) 2025 Flowing Code
  * %%
@@ -17,7 +17,7 @@
  * limitations under the License.
  * #L%
  */
-package com.flowingcode.vaadin.addons.cronexpressioneditor;
+package com.flowingcode.vaadin.addons.cronexpressionfield;
 
 import com.flowingcode.vaadin.addons.demo.DemoSource;
 import com.vaadin.flow.component.html.Div;
@@ -28,13 +28,13 @@ import com.vaadin.flow.router.Route;
 @DemoSource
 @PageTitle("Help enabled Demo")
 @SuppressWarnings("serial")
-@Route(value = "cron-exp-editor/help-enabled", layout = CronExpressionEditorDemoView.class)
+@Route(value = "cron-expression-field/help-enabled", layout = CronExpressionFieldDemoView.class)
 public class HelpEnabledDemo extends Div {
   public HelpEnabledDemo() {
-    CronExpressionEditor croneditor = new CronExpressionEditor();
-    croneditor.setHelpEnabled(true);
+    CronExpressionField cronField = new CronExpressionField();
+    cronField.setHelpEnabled(true);
     Span valueDisplay = new Span();
-    croneditor.addValueChangeListener(v -> valueDisplay.setText("Current expression: " + v.getValue()));
-    add(croneditor, valueDisplay);
+    cronField.addValueChangeListener(v -> valueDisplay.setText("Current expression: " + v.getValue()));
+    add(cronField, valueDisplay);
   }
 }
