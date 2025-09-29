@@ -1,6 +1,6 @@
 /*-
  * #%L
- * Cron Expression Editor Add-on
+ * Cron Expression Field Add-on
  * %%
  * Copyright (C) 2025 Flowing Code
  * %%
@@ -17,7 +17,7 @@
  * limitations under the License.
  * #L%
  */
-package com.flowingcode.vaadin.addons.cronexpressioneditor;
+package com.flowingcode.vaadin.addons.cronexpressionfield;
 
 import com.flowingcode.vaadin.addons.demo.DemoSource;
 import com.vaadin.flow.component.checkbox.Checkbox;
@@ -28,17 +28,17 @@ import com.vaadin.flow.router.Route;
 @DemoSource
 @PageTitle("Next Dates Visible Demo")
 @SuppressWarnings("serial")
-@Route(value = "cron-exp-editor/next-dates-visible", layout = CronExpressionEditorDemoView.class)
+@Route(value = "cron-expression-field/next-dates-visible", layout = CronExpressionFieldDemoView.class)
 public class NextDatesVisibleDemo extends VerticalLayout {
 
   public NextDatesVisibleDemo() {
-    CronExpressionEditor croneditor = new CronExpressionEditor();
+    CronExpressionField cronField = new CronExpressionField();
     Checkbox checkbox = new Checkbox("Show next dates");
-    croneditor.setNextDatesButtonVisible(false);
+    cronField.setNextDatesButtonVisible(false);
     checkbox.addValueChangeListener(v -> {
-      croneditor.setNextDatesButtonVisible(v.getValue());
+      cronField.setNextDatesButtonVisible(v.getValue());
     });
-    add(checkbox, croneditor);
+    add(checkbox, cronField);
   }
 
 }

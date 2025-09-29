@@ -1,27 +1,27 @@
-[![Published on Vaadin Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/cron-expression-editor-add-on)
-[![Stars on vaadin.com/directory](https://img.shields.io/vaadin-directory/star/cron-expression-editor-add-on.svg)](https://vaadin.com/directory/component/cron-expression-editor-add-on)
-[![Build Status](https://jenkins.flowingcode.com/job/CronExpressionEditor-addon/badge/icon)](https://jenkins.flowingcode.com/job/CronExpressionEditor-addon)
-[![Maven Central](https://img.shields.io/maven-central/v/com.flowingcode.vaadin.addons/cron-expression-editor-addon)](https://mvnrepository.com/artifact/com.flowingcode.vaadin.addons/cron-expression-editor-addon)
-[![Javadoc](https://img.shields.io/badge/javadoc-00b4f0)](https://javadoc.flowingcode.com/artifact/com.flowingcode.vaadin.addons/cron-expression-editor-addon)
+[![Published on Vaadin Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/cron-expression-field-add-on)
+[![Stars on vaadin.com/directory](https://img.shields.io/vaadin-directory/star/cron-expression-field-add-on.svg)](https://vaadin.com/directory/component/cron-expression-field-add-on)
+[![Build Status](https://jenkins.flowingcode.com/job/CronExpressionField-addon/badge/icon)](https://jenkins.flowingcode.com/job/CronExpressionField-addon)
+[![Maven Central](https://img.shields.io/maven-central/v/com.flowingcode.vaadin.addons/cron-expression-field-addon)](https://mvnrepository.com/artifact/com.flowingcode.vaadin.addons/cron-expression-field-addon)
+[![Javadoc](https://img.shields.io/badge/javadoc-00b4f0)](https://javadoc.flowingcode.com/artifact/com.flowingcode.vaadin.addons/cron-expression-field-addon)
 
-# Cron Expression Editor Add-on
+# Cron Expression Field Add-on
 
-A component for Vaadin 24 that assists in the generation of cron expressions
+A component for Vaadin 24 that assists in the generation of cron expressions.
 
 ## Features
 
-* A mode to input daily, weekly and monthly expressions with the assistance of UI components
-* An advanced mode to input cron expressions directly
-* Calculation of the next dates scheduled by the generated cron expression
-* Allows the configuration of a list of frequently used cron expressions
+* A mode to input daily, weekly and monthly expressions with the assistance of UI components.
+* An advanced mode to input cron expressions directly.
+* Calculation of the next dates scheduled by the generated cron expression.
+* Allows the configuration of a list of frequently used cron expressions.
 
 ## Online demo
 
-[Online demo here](http://addonsv24.flowingcode.com/cron-expression-editor)
+[Online demo here](http://addonsv24.flowingcode.com/cron-expression-field)
 
 ## Download release
 
-[Available in Vaadin Directory](https://vaadin.com/directory/component/cron-expression-editor-add-on)
+[Available in Vaadin Directory](https://vaadin.com/directory/component/cron-expression-field-add-on)
 
 ### Maven install
 
@@ -30,7 +30,7 @@ Add the following dependencies in your pom.xml file:
 ```xml
 <dependency>
    <groupId>com.flowingcode.vaadin.addons</groupId>
-   <artifactId>cron-expression-editor-addon</artifactId>
+   <artifactId>cron-expression-field-addon</artifactId>
    <version>X.Y.Z</version>
 </dependency>
 ```
@@ -47,7 +47,7 @@ To see the demo, navigate to http://localhost:8080/
 
 ## Release notes
 
-See [here](https://github.com/FlowingCode/CronExpressionEditor/releases)
+See [here](https://github.com/FlowingCode/CronExpressionField/releases)
 
 ## Issue tracking
 
@@ -87,7 +87,7 @@ Then, follow these steps for creating a contribution:
 
 This add-on is distributed under Apache License 2.0. For license terms, see LICENSE.txt.
 
-CronExpressionEditor Add-on is written by Flowing Code S.A.
+Cron Expression Field Add-on is written by Flowing Code S.A.
 
 ## Third-Party Dependencies
 
@@ -101,13 +101,13 @@ This project includes the following third-party dependency:
 
 ```java
 // Create a new instance
-CronExpressionEditor editor = new CronExpressionEditor();
+CronExpressionField field = new CronExpressionField();
 
 // Set default expression (optional)
-editor.setDefaultExpression("0 0 12 * * ?");
+field.setDefaultExpression("0 0 12 * * ?");
 
 // Add to your layout
-add(editor);
+add(field);
 ```
 
 ## Special configuration when using Spring

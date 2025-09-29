@@ -1,6 +1,6 @@
 /*-
  * #%L
- * Cron Expression Editor Add-on
+ * Cron Expression Field Add-on
  * %%
  * Copyright (C) 2025 Flowing Code
  * %%
@@ -18,7 +18,7 @@
  * #L%
  */
 
-package com.flowingcode.vaadin.addons.cronexpressioneditor;
+package com.flowingcode.vaadin.addons.cronexpressionfield;
 
 import java.time.DayOfWeek;
 import java.time.Duration;
@@ -58,7 +58,6 @@ import com.vaadin.flow.function.SerializableConsumer;
 import com.vaadin.flow.internal.JsonSerializer;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 import elemental.json.JsonObject;
-import org.springframework.format.annotation.DurationFormat.Unit;
 import org.springframework.scheduling.support.CronExpression;
 import it.burning.cron.CronExpressionDescriptor;
 import it.burning.cron.CronExpressionParser.CronExpressionParseException;
@@ -71,8 +70,8 @@ import it.burning.cron.CronExpressionParser.Options;
  * @author Sofia Nuñez / Flowing Code
  */
 @SuppressWarnings("serial")
-@CssImport(value = "./styles/cron-expression-editor-styles.css")
-public class CronExpressionEditor extends CustomField<String> {
+@CssImport(value = "./styles/cron-expression-field-styles.css")
+public class CronExpressionField extends CustomField<String> {
 
   /**
    * Default value used only when {@code inputExpressionTf} and {@code defaultExpression} are empty. Represents every
@@ -94,24 +93,24 @@ public class CronExpressionEditor extends CustomField<String> {
     SECONDS, MINUTES, HOURS;
   }
 
-  private CronExpressionEditorI18n i18n;
+  private CronExpressionFieldI18n i18n;
   private boolean helpEnabled;
   private boolean commonExpressionsVisible;
   private boolean cronInputEnabled;
 
-  /** Creates a new instance of {@code CronExpressionEditor} */
-  public CronExpressionEditor() {
-    this.setClassName("fc-cron-expression-editor");
+  /** Creates a new instance of {@code CronExpressionField} */
+  public CronExpressionField() {
+    this.setClassName("fc-cron-expression-field");
     setI18n(null);
     configureLayout();
   }
 
   /**
-   * Creates a new instance of {@code CronExpressionEditor} with a default expression.
+   * Creates a new instance of {@code CronExpressionField} with a default expression.
    * 
    * @param defaultExpression a {@code String} representing the default cron expression to be set
    */
-  public CronExpressionEditor(String defaultExpression) {
+  public CronExpressionField(String defaultExpression) {
     this();
     setDefaultExpression(defaultExpression);
   }
@@ -567,15 +566,15 @@ public class CronExpressionEditor extends CustomField<String> {
   }
 
   /**
-   * Sets the internationalization settings for the editor.
+   * Sets the internationalization settings for the field.
    * <p>
    * If {@code i18n} is {@code null}, default internationalization to english.
    * </p>
    *
-   * @param i18n the {@link CronExpressionEditorI18n} to use, or {@code null} for default
+   * @param i18n the {@link CronExpressionFieldI18n} to use, or {@code null} for default
    */
-  public void setI18n(CronExpressionEditorI18n i18n) {
-    this.i18n = (i18n != null) ? i18n : CronExpressionEditorI18n.createDefault();
+  public void setI18n(CronExpressionFieldI18n i18n) {
+    this.i18n = (i18n != null) ? i18n : CronExpressionFieldI18n.createDefault();
     getUI().ifPresent(ui -> setI18nWithJS());
   }
 

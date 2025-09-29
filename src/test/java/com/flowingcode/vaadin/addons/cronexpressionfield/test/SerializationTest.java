@@ -1,6 +1,6 @@
 /*-
  * #%L
- * Cron Expression Editor Add-on
+ * Cron Expression Field Add-on
  * %%
  * Copyright (C) 2025 Flowing Code
  * %%
@@ -17,7 +17,7 @@
  * limitations under the License.
  * #L%
  */
-package com.flowingcode.vaadin.addons.cronexpressioneditor.test;
+package com.flowingcode.vaadin.addons.cronexpressionfield.test;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -26,7 +26,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import org.junit.Assert;
 import org.junit.Test;
-import com.flowingcode.vaadin.addons.cronexpressioneditor.CronExpressionEditor;
+
+import com.flowingcode.vaadin.addons.cronexpressionfield.CronExpressionField;
 
 public class SerializationTest {
 
@@ -43,7 +44,7 @@ public class SerializationTest {
   @Test
   public void testSerialization() throws ClassNotFoundException, IOException {
     try {
-      testSerializationOf(new CronExpressionEditor());
+      testSerializationOf(new CronExpressionField());
     } catch (Exception e) {
       Assert.fail("Problem while testing serialization: " + e.getMessage());
     }

@@ -1,6 +1,6 @@
 /*-
  * #%L
- * Cron Expression Editor Add-on
+ * Cron Expression Field Add-on
  * %%
  * Copyright (C) 2025 Flowing Code
  * %%
@@ -17,9 +17,8 @@
  * limitations under the License.
  * #L%
  */
-package com.flowingcode.vaadin.addons.cronexpressioneditor;
+package com.flowingcode.vaadin.addons.cronexpressionfield;
 
-import java.util.Locale;
 import com.flowingcode.vaadin.addons.demo.DemoSource;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Span;
@@ -33,19 +32,19 @@ import com.vaadin.flow.router.Route;
 @DemoSource
 @PageTitle("Default Setting Demo")
 @SuppressWarnings("serial")
-@Route(value = "cron-exp-editor/default", layout = CronExpressionEditorDemoView.class)
-public class CronExpressionEditorDemo extends VerticalLayout {
+@Route(value = "cron-expression-field/default", layout = CronExpressionFieldDemoView.class)
+public class CronExpressionFieldDemo extends VerticalLayout {
 
-  public CronExpressionEditorDemo() {
+  public CronExpressionFieldDemo() {
     TextField defaultCronTf = new TextField();
     defaultCronTf.setPlaceholder("Input a default cron expression");
     Button save = new Button("Save");
 
-    CronExpressionEditor croneditor = new CronExpressionEditor();
-    croneditor.setLabel("Custom default set");
+    CronExpressionField cronField = new CronExpressionField();
+    cronField.setLabel("Custom default set");
 
     save.addClickListener(v -> {
-      if (croneditor.setDefaultExpression(defaultCronTf.getValue())) {
+      if (cronField.setDefaultExpression(defaultCronTf.getValue())) {
         Notification.show("Default set successfully");
       } else {
         Notification.show("Invalid cron, default not set");
@@ -53,8 +52,8 @@ public class CronExpressionEditorDemo extends VerticalLayout {
 
     });
     Span valueDisplay = new Span();
-    croneditor.addValueChangeListener(v -> valueDisplay.setText("Current expression: " + v.getValue()));
-    add(new HorizontalLayout(defaultCronTf, save), croneditor, valueDisplay);
+    cronField.addValueChangeListener(v -> valueDisplay.setText("Current expression: " + v.getValue()));
+    add(new HorizontalLayout(defaultCronTf, save), cronField, valueDisplay);
   }
 
 }
