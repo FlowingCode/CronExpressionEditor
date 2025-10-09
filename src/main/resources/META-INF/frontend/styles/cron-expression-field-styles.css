@@ -22,16 +22,38 @@
 	margin: 0;
 	padding: 0;
 }
+
 .inline-combobox::part(input-field) {
     background-color: transparent;
 	padding: 0;
 	margin: 0;
 }
+
 vaadin-grid::part(header) {
     display: none;
 }
-.description-div{
+
+.description-div {
 	padding: 0;
 	margin: 0;
 	text-align: center;
+}
+
+.fc-cron-expression-field {
+	justify-content: center;
+	align-items: center;
+	padding: 0; 
+}
+
+.fc-cron-expression-field-main-layout {
+	padding: 0; 
+	margin: 0;
+}
+
+.fc-common-expressions-combobox {
+	align-self: center;
+}
+
+.fc-daily-layout-time-amount {
+	margin: 0;
 }

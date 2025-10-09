@@ -55,7 +55,7 @@ import com.vaadin.flow.component.timepicker.TimePicker;
 import com.vaadin.flow.data.provider.DataProvider;
 import com.vaadin.flow.function.SerializableConsumer;
 import com.vaadin.flow.internal.JsonSerializer;
-import com.vaadin.flow.theme.lumo.LumoUtility;
+
 import elemental.json.JsonObject;
 import org.springframework.scheduling.support.CronExpression;
 import it.burning.cron.CronExpressionDescriptor;
@@ -195,10 +195,10 @@ public class CronExpressionField extends CustomField<String> {
     cronExpressionLayoutCb.setWidth("40%");
     cronDescriptionDiv.setWidthFull();
     cronDescriptionDiv.setClassName("description-div");
-    addClassNames(LumoUtility.JustifyContent.CENTER, LumoUtility.AlignItems.CENTER, LumoUtility.Padding.NONE);
+    addClassName("fc-cron-expression-field");
     setMaxWidth("450px");
 
-    mainLayout.addClassNames(LumoUtility.Margin.NONE, LumoUtility.Padding.NONE);
+    mainLayout.addClassName("fc-cron-expression-field-main-layout");
 
     topLayout.setWidthFull();
     topLayout.setAlignItems(Alignment.END);
@@ -259,7 +259,7 @@ public class CronExpressionField extends CustomField<String> {
 
       commonExpressionsCb.addValueChangeListener(v -> updateCronExpression(commonExpressionsCb.getValue()));
       commonExpressionsCb.setWidthFull();
-      commonExpressionsCb.addClassName(LumoUtility.AlignSelf.CENTER);
+      commonExpressionsCb.addClassName("fc-common-expressions-combobox");
       commonExpressionsCb.setLabel(i18n.getCommonExpressionsLabel());
       commonExpressionsCb.setAllowCustomValue(false);
       mainLayout.add(commonExpressionsCb);
@@ -304,7 +304,7 @@ public class CronExpressionField extends CustomField<String> {
         getDailyExpression(timeUnitCb.getValue(), v.getValue());
       }
     });
-    timeAmountField.addClassName(LumoUtility.Margin.NONE);
+    timeAmountField.addClassName("fc-daily-layout-time-amount");
     timeAmountField.setSuffixComponent(timeUnitCb);
 
     DayOfWeekSelector daySelector = new DayOfWeekSelector();
@@ -363,7 +363,6 @@ public class CronExpressionField extends CustomField<String> {
     }
     HorizontalLayout layout = new HorizontalLayout(startsAtTp, dayOfMonthField, monthField);
     layout.setWidthFull();
-    layout.setJustifyContentMode(JustifyContentMode.CENTER);
     mainLayout.add(layout);
   }
 
