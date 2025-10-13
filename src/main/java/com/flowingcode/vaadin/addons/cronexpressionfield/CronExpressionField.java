@@ -44,7 +44,6 @@ import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.formlayout.FormLayout.ResponsiveStep;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment;
 import com.vaadin.flow.component.orderedlayout.FlexComponent.JustifyContentMode;
@@ -341,7 +340,7 @@ public class CronExpressionField extends CustomField<String> {
     dayOfMonthField.setValue(1);
     dayOfMonthField.setWidth("30%");
     IntegerField monthField = new IntegerField(i18n.getRepeatEveryLabel());
-    monthField.setSuffixComponent(new Paragraph(i18n.getMonth()));
+    monthField.setSuffixComponent(new Span(i18n.getMonth()));
     monthField.setValue(1);
     monthField.setStepButtonsVisible(true);
     monthField.setMin(1);
