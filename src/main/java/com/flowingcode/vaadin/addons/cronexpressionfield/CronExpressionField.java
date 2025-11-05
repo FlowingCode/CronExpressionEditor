@@ -31,6 +31,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Stream;
 import com.flowingcode.vaadin.addons.dayofweekselector.DayOfWeekSelector;
@@ -52,16 +53,13 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.timepicker.TimePicker;
-import com.vaadin.flow.data.provider.DataProvider;
 import com.vaadin.flow.function.SerializableConsumer;
 import com.vaadin.flow.internal.JsonSerializer;
-
 import elemental.json.JsonObject;
 import org.springframework.scheduling.support.CronExpression;
 import it.burning.cron.CronExpressionDescriptor;
 import it.burning.cron.CronExpressionParser.CronExpressionParseException;
 import it.burning.cron.CronExpressionParser.Options;
-
 
 /**
  * UI component for building cron expressions.
@@ -445,13 +443,14 @@ public class CronExpressionField extends CustomField<String> {
     }
   }
 
-  private LocalDateTime calculateNextDate(LocalDateTime date) {
-    return CronExpression.parse(inputExpressionTf.getValue()).next(date);
-  }
-
   private Stream<LocalDateTime> generateNextDate(LocalDateTime start, int offset, int limit) {
-    Stream<LocalDateTime> nextDates = Stream.iterate(calculateNextDate(start), this::calculateNextDate);
-    return nextDates.skip(offset).limit(limit);
+    CronExpression parsedExpression = CronExpression.parse(inputExpressionTf.getValue());
+    LocalDateTime firstNext = parsedExpression.next(start);
+    if (firstNext == null) {
+      return Stream.empty();
+    }
+    return Stream.iterate(firstNext, Objects::nonNull, parsedExpression::next).skip(offset)
+        .limit(limit);
   }
 
   private String formatDate(LocalDateTime date) {
