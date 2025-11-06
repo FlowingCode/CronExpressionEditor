@@ -208,7 +208,6 @@ public class CronExpressionField extends CustomField<String> {
 
     nextDatesBtn.setText(i18n.getShowNextDatesBtn());
     nextDatesBtn.addClickListener(e -> showNextDates());
-    nextDatesBtn.addThemeVariants(ButtonVariant.LUMO_TERTIARY_INLINE);
     nextDatesBtn.setVisible(false);
 
     add(topLayout, mainLayout, new Span(i18n.getDescriptionLabel()), cronDescriptionDiv, nextDatesBtn);
