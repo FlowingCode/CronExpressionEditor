@@ -29,10 +29,6 @@
 	margin: 0;
 }
 
-vaadin-grid::part(header) {
-    display: none;
-}
-
 .description-div {
 	padding: 0;
 	margin: 0;
