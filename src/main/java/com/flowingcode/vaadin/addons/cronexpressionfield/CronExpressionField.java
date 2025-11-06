@@ -436,7 +436,7 @@ public class CronExpressionField extends CustomField<String> {
     if (!inputExpressionTf.getValue().isEmpty()) {
       grid.removeAllColumns();
       grid.addColumn(date -> formatDate(date));
-      grid.setHeight("30%");
+      grid.setHeight("108px");
       grid.setItems(q -> generateNextDate(LocalDateTime.now(), q.getOffset(), q.getLimit()));
       add(grid);
     }
